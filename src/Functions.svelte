@@ -1,21 +1,24 @@
 <script lang="ts" context="module">
-  //turns scale into mode
-  export function getMode( scale: string[], scaleDegree: number) {
-	let mode = []
-	let notes = scale.slice(0,scaleDegree - 1)
-    let flippedNotes = scale.slice(- scale.length + (scaleDegree - 1))
-    mode = notes.map(note => {flippedNotes.push(note)})
+import {chromaticScales} from './Constants.svelte'
 
-    return flippedNotes
+
+  //turns scale into mode
+export function getMode( scale: string[], scaleDegree: number) {
+  let mode = []
+  let notes = scale.slice(0,scaleDegree - 1)
+  let flippedNotes = scale.slice(- scale.length + (scaleDegree - 1))
+  mode = notes.map(note => {flippedNotes.push(note)})
+  return flippedNotes
 } 
 
 // Takes Scales and Transposes to all all octaves
-export function makeMusicalSpectre(scale: string[]) {
-  let octaves= [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+export function makeMusicalSpectre(scale: string[]  ) {
+  let octaves = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   let fullChromatic = []
-	octaves.map( octave => {
-    	scale.map(note => {
-    	fullChromatic.push(note + octaves[octave])})
+  
+  octaves.map( octave => {
+    scale.map(note => {
+    fullChromatic.push(note + octaves[octave])})
 	})
 	return fullChromatic
 }
@@ -29,10 +32,20 @@ export function makeChord(scale : string[], notes : number ) {
 			scaleInThids.push(note)
 		} else upperExtensions.push(note) 
 	})
-	return scaleInThids.concat(upperExtensions).splice(0, notes)
+	return scaleInThids.concat(upperExtensions).slice(0, notes)
 }
 
 
+//full single string from notean number of frets... Takes note name (string) in e.g "e3" and number of frets (number)
+
+export function makeGuitarString(tunedTo : string,  frets: number) {
+	const chromatic = getMode(chromaticScales.sharps, 5)
+	let stringArea = makeMusicalSpectre(chromatic)
+	let openFret = stringArea.indexOf(tunedTo)
+	
+	return stringArea.slice(openFret, openFret + frets)	
+
+}
 
 
 </script>
