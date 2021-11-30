@@ -8,7 +8,9 @@ export function getMode( scale: string[], scaleDegree: number) {
   let notes = scale.slice(0,scaleDegree - 1)
   let flippedNotes = scale.slice(- scale.length + (scaleDegree - 1))
   mode = notes.map(note => {flippedNotes.push(note)})
+  console.log(flippedNotes) 
   return flippedNotes
+  
 } 
 
 // Takes Scales and Transposes to all all octaves
@@ -42,8 +44,9 @@ export function makeGuitarString(tunedTo : string,  frets: number) {
 	const chromatic = getMode(chromaticScales.sharps, 5)
 	let stringArea = makeMusicalSpectre(chromatic)
 	let openFret = stringArea.indexOf(tunedTo)
-	
-	return stringArea.slice(openFret, openFret + frets)	
+	let guitarString = []
+	guitarString.push( stringArea.slice(openFret, openFret + frets))
+    return guitarString	
 
 }
 

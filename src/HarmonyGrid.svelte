@@ -9,10 +9,10 @@
     diatonicChords: ["i", "iib5", "III", "iv", "v", "bVI", "bVII" ],
     strings: [
           {openString: "e", stringNum: 1, fret: "0", noteName: "e", harmony: "5", note: "e3"},
-          {openString: "b", stringNum: 2, fret: "1", noteName: "c", harmony: "3", note: "c3" },
-          {openString: "g", stringNum: 3, fret: "2", noteName: "a", harmony: "R", note:"a2" },
+          {openString: "b", stringNum: 2, fret: "1", noteName: "c", harmony: "b3", note: "c3"},
+          {openString: "g", stringNum: 3, fret: "2", noteName: "a", harmony: "r", note:"a2" },
           {openString: "d", stringNum: 4, fret: "2", noteName: "e", harmony: "5",  note:"e2"},
-          {openString: "a", stringNum: 5, fret: "0", noteName: "a", harmony: "R", note: "a1"},
+          {openString: "a", stringNum: 5, fret: "0", noteName: "a", harmony: "r", note: "a1"},
           {openString: "e", stringNum: 6, fret: "x", noteName: "-", harmony: "-", note: ""}
                       ]
       }
@@ -46,10 +46,10 @@
 
 
 
-<h2>Harmony Grid</h2>
+<!-- <h2>Harmony Grid</h2> -->
 <div class="card">
  
-	<p class="key">Key: {chord.chordKey}</p>
+	<!-- <p class="key">Key: {chord.chordKey}</p> -->
 
 	<div class="grid-card">
   	  
@@ -109,6 +109,7 @@
 
 .chord-grid {
 	/* border: solid 1px salmon; */
+    padding: .75em;
 }
 
 .chord-grid td  {
@@ -127,6 +128,11 @@
 }
 .notes {
 	font-style: italic;
+}
+
+.harmony {
+    color: rgb(138, 130, 130);
+    
 }
 .chord-name {
 	font-size: 1.2rem;

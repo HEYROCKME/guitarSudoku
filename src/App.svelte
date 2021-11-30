@@ -17,16 +17,14 @@ import HarmonyGrid from './HarmonyGrid.svelte'
 	
  }
  
+function makeGuitarNeck(tuning: string[], frets: number) {
+   return tuning.map(note => makeGuitarString(note, frets + 1))
+}
+
+
  
- 
-console.log(
-	makeGuitarString( "e3", 21),
-	makeGuitarString( "b2", 21),
-	makeGuitarString( "g2", 21),
-	makeGuitarString( "d2", 21),
-	makeGuitarString( "a2", 21),
-	makeGuitarString( "e1", 21)
-)
+let guitarneck = makeGuitarNeck(tuning.regular, 21)
+// console.log(guitarneck)
 
 
 
@@ -39,4 +37,54 @@ console.log(
 // console.log(aMinor)
 </script>
 
-<HarmonyGrid/>
+<h1>Guitar neck</h1>
+<table>
+{#each guitarneck as fretboard, i }
+
+	 <tr id="string{i + 1}">
+	{#each fretboard as notes }
+	<td class="string-names">{i + 1} str</td>
+		{#each notes as note}
+	
+		<td class="{note}">{note}</td>
+
+		{/each}
+	{/each}
+	</tr>
+
+	
+{/each}
+</table>
+<h1>Harmony</h1>
+<div class="chordsheet">
+	<HarmonyGrid/> <HarmonyGrid/>
+</div>
+
+
+<style>
+	 * {padding: 0;}
+
+	table td {
+		padding: 5px 7px;
+		text-align: center;
+		background-color: antiquewhite;
+	}
+
+	.chordsheet {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.string-names {
+		background-color: rgb(148, 141, 141);
+	}
+	.c3 {
+		background-color: aqua;
+	}
+
+	.e3 {
+		background-color: orange;
+	}
+
+	.g2 {background-color: blueviolet;}
+</style>

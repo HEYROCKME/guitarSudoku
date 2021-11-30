@@ -32,15 +32,12 @@
        }
 </script>
 
-
-
 <div class="guitarneck">
 	{#each guitarNeck.firstString as {fret, noteName, note}, i }
-  <li>
-	  
-	<ul>{note}</ul>
-
-  </li>
+ <table>
+   <tr><td>"the" {note}</td>
+     <tr>
+ </table>
   	
   {/each}
 
@@ -48,11 +45,11 @@
 
 <style>
 
-li {
-	display: inline-block;
+    li {
+        display: inline-block;
 
-}
+    }
 
-ul {padding: .5em .2em;}
+    td {padding: .5em .5em;}
 
 </style>
