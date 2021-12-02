@@ -41,8 +41,8 @@ export function makeChord(scale : string[], notes : number ) {
 
 //full single string from notean number of frets... Takes note name (string) in e.g "e3" and number of frets (number)
 
-export function makeGuitarString(tunedTo : string,  frets: number) {
-	let stringArea = chromaticFullRangeSharps
+export function makeGuitarString(tunedTo : string,  frets: number, flats : boolean) {
+	let stringArea = !flats ? chromaticFullRangeSharps :  chromaticFullRangeFlats
 	let openFret = stringArea.indexOf(tunedTo)
 	let guitarString = []
 	guitarString.push( stringArea.slice(openFret, openFret + frets))
@@ -51,6 +51,10 @@ export function makeGuitarString(tunedTo : string,  frets: number) {
 
 }
 
+
+export function makeGuitarNeck(tuning: string[], frets: number, flats : boolean) {
+   return tuning.map(guitarString => makeGuitarString(guitarString, frets +1, flats))
+}
 
 </script>
 
