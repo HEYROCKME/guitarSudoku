@@ -47,7 +47,6 @@ export function makeGuitarString(tunedTo : string,  frets: number) {
 	let guitarString = []
 	guitarString.push( stringArea.slice(openFret, openFret + frets))
 
-	console.log(openFret)
     return guitarString	
 
 }

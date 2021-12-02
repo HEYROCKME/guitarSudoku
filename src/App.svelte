@@ -39,7 +39,7 @@ let guitarneck = makeGuitarNeck(tuning.regular, 21)
 
 <h1>Guitar neck</h1>
 <table>
-{#each guitarneck as fretboard, i }
+  {#each guitarneck as fretboard, i }
 
 	 <tr id="string{i + 1}">
 	{#each fretboard as notes }
@@ -50,11 +50,12 @@ let guitarneck = makeGuitarNeck(tuning.regular, 21)
 
 		{/each}
 	{/each}
-	</tr>
-
-	
-{/each}
+	</tr>	
+  {/each}
 </table>
+
+<select name="" id="note1"></select>
+
 <h1>Harmony</h1>
 <div class="chordsheet">
 	<HarmonyGrid/> <HarmonyGrid/>
