@@ -18,7 +18,7 @@ import HarmonyGrid from './HarmonyGrid.svelte'
  }
  
 function makeGuitarNeck(tuning: string[], frets: number) {
-   return tuning.map(note => makeGuitarString(note, frets + 1))
+   return tuning.map(guitarString => makeGuitarString(guitarString, frets + 1))
 }
 
 

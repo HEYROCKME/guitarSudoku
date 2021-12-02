@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-import {chromaticScales} from './Constants.svelte'
+import {chromaticScales, chromaticFullRangeSharps, chromaticFullRangeFlats} from './Constants.svelte'
 
 
   //turns scale into mode
@@ -8,7 +8,7 @@ export function getMode( scale: string[], scaleDegree: number) {
   let notes = scale.slice(0,scaleDegree - 1)
   let flippedNotes = scale.slice(- scale.length + (scaleDegree - 1))
   mode = notes.map(note => {flippedNotes.push(note)})
-  console.log(flippedNotes) 
+  
   return flippedNotes
   
 } 
@@ -22,6 +22,7 @@ export function makeMusicalSpectre(scale: string[]  ) {
     scale.map(note => {
     fullChromatic.push(note + octaves[octave])})
 	})
+	// console.log(fullChromatic)
 	return fullChromatic
 }
 
@@ -41,11 +42,12 @@ export function makeChord(scale : string[], notes : number ) {
 //full single string from notean number of frets... Takes note name (string) in e.g "e3" and number of frets (number)
 
 export function makeGuitarString(tunedTo : string,  frets: number) {
-	const chromatic = getMode(chromaticScales.sharps, 5)
-	let stringArea = makeMusicalSpectre(chromatic)
+	let stringArea = chromaticFullRangeSharps
 	let openFret = stringArea.indexOf(tunedTo)
 	let guitarString = []
 	guitarString.push( stringArea.slice(openFret, openFret + frets))
+
+	console.log(openFret)
     return guitarString	
 
 }
