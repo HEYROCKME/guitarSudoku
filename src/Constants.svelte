@@ -6,7 +6,7 @@ export const chromaticScales ={
 }
 
 export const tuning = {
-    regular: ['e3', 'b3', 'g2', 'd2', 'a1', 'e1'],
+    regular: ['e3', 'b2', 'g2', 'd2', 'a1', 'e1'],
     dropD: ['e3', 'b3', 'g2', 'd2', 'a1', 'd1']
 }
 
