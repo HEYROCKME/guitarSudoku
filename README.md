@@ -1,8 +1,8 @@
-*Psst — looking for a more complete solution? Check out [SvelteKit](https://kit.svelte.dev), the official framework for building web applications of all sizes, with a beautiful development experience and flexible filesystem-based routing.*
+#guitarSudoku
 
-*Looking for a shareable component template instead? You can [use SvelteKit for that as well](https://kit.svelte.dev/docs#packaging) or the older [sveltejs/component-template](https://github.com/sveltejs/component-template)*
+Guitar sudoku is a shorthand guitar cord method for studying harmony and the notation everything chord related on electric guitar.
+The concept is at it's hart a handwritten process. The aim for this application is to provide a number of support function to present the concept...
 
----
 
 # svelte app
 
