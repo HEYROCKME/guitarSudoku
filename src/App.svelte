@@ -70,7 +70,7 @@ import NoteSelector from './noteSelector.svelte';
 
 
 <GuitarNeck/>
-<NoteSelector named="pink"/>
+<NoteSelector />
 
 
 
