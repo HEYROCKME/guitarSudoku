@@ -10,14 +10,11 @@ flats.subscribe(value => {
 })
 flats.set(false)
 
-
 export const frets = 21
-
 export const guitarNeck = makeGuitarNeck(tuning.regular, frets, accidentals)
-
 export const theArray = []
 
-
+console.log(guitarNeck)
 
 </script>
 
@@ -26,19 +23,26 @@ export const theArray = []
 <h1>Guitar neck</h1>
 <table>
   {#each guitarNeck as fretboard, i }
+<tr>{#each fretboard as note}
+<td class={note.classCSS}>{note.noteName}</td>
+{/each}
+</tr>
+  {/each}
+</table>
+<!-- <table>
+  {#each guitarNeck as fretboard, i }
 
 	 <tr id="string{i + 1}">
-	{#each fretboard as notes }
-	<td class="string-names">{i + 1} str</td>
+	  {#each fretboard as notes }
+	    <td class="string-names">{i + 1} str</td>
 		{#each notes as note}
-	
-		<td class={note}>{note}</td>
+		 <td class={note.classCSS}>{note.noteName}</td>
 
 		{/each}
 	{/each}
 	</tr>	
   {/each}
-</table>
+</table> -->
 
 
 

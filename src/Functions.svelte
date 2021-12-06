@@ -1,5 +1,10 @@
 <script lang="ts" context="module">
-import {chromaticScales, chromaticFullRangeSharps, chromaticFullRangeFlats} from './Constants.svelte'
+import { element } from 'svelte/internal';
+
+import App from './App.svelte';
+
+import Constants, {chromaticScales, chromaticFullRangeSharps, chromaticFullRangeFlats} from './Constants.svelte'
+import GuitarNeck from './GuitarNeck.svelte';
 import { flats } from './stores'
 
 let accidentals : boolean
@@ -50,17 +55,49 @@ export function makeChord(scale : string[], notes : number ) {
 export function makeGuitarString(tunedTo : string,  frets: number, accidentals : boolean ) {
 	let stringArea = !accidentals ? chromaticFullRangeSharps :  chromaticFullRangeFlats
 	let openFret = stringArea.indexOf(tunedTo)
-	let guitarString = []
-	guitarString.push( stringArea.slice(openFret, openFret + frets))
+	let guitarString = stringArea.slice(openFret, openFret + frets)
+			
+	let result =[]
 
-    return guitarString	
+	guitarString.map((element : string, i : number) => { 
+		
+
+			let note = {
+				noteName: element,
+				note: element.length <= 2 ? element[0] : element[0] + "#",
+				fret: i,
+				classCSS: !element.includes("#") ? element : element[0] + "sharp" + element[2] ,
+
+			}	
+			
+			result.push(note)
+		
+
+	})
+	
+    return result
 
 }
 
 
 export function makeGuitarNeck(tuning: string[], frets: number, flats : boolean) {
-   return tuning.map(guitarString => makeGuitarString(guitarString, frets +1, flats))
+ let neck =  tuning.map(guitarString => makeGuitarString(guitarString, frets +1, flats))
+//  let neckObject = {
+// 	 string1: neck[0],
+// 	 string2: neck[1],
+// 	 string3: neck[2],
+// 	 string4: neck[3],
+// 	 string5: neck[4],
+// 	 string6: neck[5],
+	 
+//  }
+
+	
+
+//  return neckObject
+ return neck
 }
+
 
 </script>
 

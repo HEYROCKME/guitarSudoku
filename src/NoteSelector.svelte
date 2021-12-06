@@ -13,8 +13,9 @@ flats.subscribe(value => {
 
 let selected = ""
 let chromatic = accidentals ? chromaticFullRangeFlats : chromaticFullRangeSharps    
-const noteRange =  [guitarNeck[5][0][0], guitarNeck[0][0][21]]
+const noteRange =  [guitarNeck[5][0].noteName, guitarNeck[0][21].noteName]
 const notesOnNeck = chromatic.slice(chromatic.indexOf(noteRange[0]), chromatic.indexOf(noteRange[1]))
+console.log(notesOnNeck)
 
 
 
@@ -38,7 +39,7 @@ function handleChange() {
 <div class="note-selector">
     <select bind:value={selected} on:change={handleChange} name="pink" id="note1">
         {#each notesOnNeck as notes, i}
-        <option value={notes}>{notes}</option>
+        <option value={notes.length <= 2 ? notes : notes.replace("#", "sharp")}>{notes}</option>
         {/each}
       </select>
 </div>
