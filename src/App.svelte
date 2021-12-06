@@ -4,7 +4,7 @@
 
 import HarmonyGrid from './HarmonyGrid.svelte'
 import GuitarNeck from './GuitarNeck.svelte'
-import NoteSelector from './NoteSelector.svelte';
+import NoteSelector from './noteSelector.svelte';
 
 
 
@@ -70,7 +70,7 @@ import NoteSelector from './NoteSelector.svelte';
 
 
 <GuitarNeck/>
-<NoteSelector/>
+<NoteSelector named="pink"/>
 
 
 

@@ -1,6 +1,12 @@
 <script lang="ts" context="module">
 import {chromaticScales, chromaticFullRangeSharps, chromaticFullRangeFlats} from './Constants.svelte'
+import { flats } from './stores'
 
+let accidentals : boolean
+
+flats.subscribe(value => {
+	accidentals = value
+})
 
   //turns scale into mode
 export function getMode( scale: string[], scaleDegree: number) {
@@ -41,8 +47,8 @@ export function makeChord(scale : string[], notes : number ) {
 
 //full single string from notean number of frets... Takes note name (string) in e.g "e3" and number of frets (number)
 
-export function makeGuitarString(tunedTo : string,  frets: number, flats : boolean) {
-	let stringArea = !flats ? chromaticFullRangeSharps :  chromaticFullRangeFlats
+export function makeGuitarString(tunedTo : string,  frets: number, accidentals : boolean ) {
+	let stringArea = !accidentals ? chromaticFullRangeSharps :  chromaticFullRangeFlats
 	let openFret = stringArea.indexOf(tunedTo)
 	let guitarString = []
 	guitarString.push( stringArea.slice(openFret, openFret + frets))

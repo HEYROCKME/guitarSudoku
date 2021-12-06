@@ -1,0 +1,55 @@
+// <!-- <script type="module" lang="ts">
+//     let guitarNeck = {
+//         firstString: [
+
+//             { fret: 0, noteName: "e", note: "e3" },
+//             { fret: 1, noteName: "f", note: "f3" },
+//             { fret: 2, noteName: "f#", note: "f#3" },
+//             { fret: 3, noteName: "g", note: "g3" },
+//             { fret: 4, noteName: "g#", note: "g#3" },
+//             { fret: 5, noteName: "a", note: "a3" },
+//             { fret: 6, noteName: "a#", note: "a#3" },
+//             { fret: 7, noteName: "b", note: "b3" },
+//             { fret: 8, noteName: "c", note: "c4" },
+//             { fret: 9, noteName: "c#", note: "c#4" },
+//             { fret: 10, noteName: "d", note: "d4" },
+//             { fret: 11, noteName: "d#", note: "d#4" },
+//             { fret: 12, noteName: "e", note: "e4" },
+//             { fret: 13, noteName: "f", note: "f4" },
+//             { fret: 14, noteName: "f#", note: "f#4" },
+//             { fret: 15, noteName: "g", note: "g4" },
+//             { fret: 16, noteName: "g#", note: "g#4" },
+//             { fret: 17, noteName: "a", note: "a4" },
+//             { fret: 18, noteName: "a#", note: "a#4" },
+//             { fret: 19, noteName: "b", note: "b4" },
+//             { fret: 20, noteName: "c", note: "c5" },
+//             { fret: 21, noteName: "c#", note: "c#5" },
+//             { fret: 22, noteName: "d", note: "d5" },
+//             { fret: 23, noteName: "d#", note: "d#5" },
+//             { fret: 24, noteName: "e", note: "e5" },
+
+//           ]
+//        }
+// </script>
+
+// <div class="guitarneck">
+// 	{#each guitarNeck.firstString as {fret, noteName, note}, i }
+//  <table>
+//    <tr><td>"the" {note}</td>
+//      <tr>
+//  </table>
+
+//   {/each}
+
+// </div>
+
+// <style>
+
+//     li {
+//         display: inline-block;
+
+//     }
+
+//     td {padding: .5em .5em;}
+
+// </style> -->

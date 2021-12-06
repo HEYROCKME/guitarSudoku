@@ -2,10 +2,17 @@
 <script lang="ts" context="module">
 import {chromaticFullRangeFlats, chromaticFullRangeSharps } from './Constants.svelte'
 import { guitarNeck } from './GuitarNeck.svelte'
-import flats from './GuitarNeck.svelte'
+import { flats } from './stores'
+
+let accidentals : boolean
+
+flats.subscribe(value => {
+	accidentals = value
+})
+
 
 let selected = ""
-let chromatic = flats ? chromaticFullRangeFlats : chromaticFullRangeSharps    
+let chromatic = accidentals ? chromaticFullRangeFlats : chromaticFullRangeSharps    
 const noteRange =  [guitarNeck[5][0][0], guitarNeck[0][0][21]]
 const notesOnNeck = chromatic.slice(chromatic.indexOf(noteRange[0]), chromatic.indexOf(noteRange[1]))
 
