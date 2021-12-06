@@ -1,55 +1,80 @@
-<script type="module" lang="ts">
-    let guitarNeck = {
-        firstString: [ 
-            
-            { fret: 0, noteName: "e", note: "e3" },
-            { fret: 1, noteName: "f", note: "f3" },
-            { fret: 2, noteName: "f#", note: "f#3" },
-            { fret: 3, noteName: "g", note: "g3" },
-            { fret: 4, noteName: "g#", note: "g#3" },
-            { fret: 5, noteName: "a", note: "a3" },
-            { fret: 6, noteName: "a#", note: "a#3" },
-            { fret: 7, noteName: "b", note: "b3" },
-            { fret: 8, noteName: "c", note: "c4" },
-            { fret: 9, noteName: "c#", note: "c#4" },
-            { fret: 10, noteName: "d", note: "d4" },
-            { fret: 11, noteName: "d#", note: "d#4" },
-            { fret: 12, noteName: "e", note: "e4" },
-            { fret: 13, noteName: "f", note: "f4" },
-            { fret: 14, noteName: "f#", note: "f#4" },
-            { fret: 15, noteName: "g", note: "g4" },
-            { fret: 16, noteName: "g#", note: "g#4" },
-            { fret: 17, noteName: "a", note: "a4" },
-            { fret: 18, noteName: "a#", note: "a#4" },
-            { fret: 19, noteName: "b", note: "b4" },
-            { fret: 20, noteName: "c", note: "c5" },
-            { fret: 21, noteName: "c#", note: "c#5" },
-            { fret: 22, noteName: "d", note: "d5" },
-            { fret: 23, noteName: "d#", note: "d#5" },
-            { fret: 24, noteName: "e", note: "e5" },
-      
-          ]
-       }
+<script lang="ts" context="module">
+import {makeGuitarNeck} from './Functions.svelte'
+import {tuning} from './Constants.svelte'
+import { flats } from './stores'
+
+let accidentals : boolean
+
+flats.subscribe(value => {
+  accidentals = value
+})
+flats.set(false)
+
+export const frets = 21
+export const guitarNeck = makeGuitarNeck(tuning.regular, frets, accidentals)
+export const theArray = []
+
+console.log(guitarNeck)
+
 </script>
 
-<div class="guitarneck">
-	{#each guitarNeck.firstString as {fret, noteName, note}, i }
- <table>
-   <tr><td>"the" {note}</td>
-     <tr>
- </table>
-  	
-  {/each}
 
-</div>
+
+<h1>Guitar neck</h1>
+<table>
+  {#each guitarNeck as fretboard, i }
+<tr>{#each fretboard as note}
+<td class={note.classCSS}>{note.noteName}</td>
+{/each}
+</tr>
+  {/each}
+</table>
+<!-- <table>
+  {#each guitarNeck as fretboard, i }
+
+	 <tr id="string{i + 1}">
+	  {#each fretboard as notes }
+	    <td class="string-names">{i + 1} str</td>
+		{#each notes as note}
+		 <td class={note.classCSS}>{note.noteName}</td>
+
+		{/each}
+	{/each}
+	</tr>	
+  {/each}
+</table> -->
+
+
+
 
 <style>
+  * {padding: 0;}
 
-    li {
-        display: inline-block;
+ table td {
+   padding: 5px 7px;
+   text-align: center;
+   background-color: antiquewhite;
+ }
 
-    }
 
-    td {padding: .5em .5em;}
+ .string-names {
+   background-color: rgb(148, 141, 141);
+ }
+ .c3 {
+   background-color: aqua;
+ }
 
+ .e3 {
+   background-color: orange;
+ }
+
+ .g2 {background-color: blueviolet;}
+
+ .pink {background-color: pink;}
 </style>
+
+
+
+
+
+

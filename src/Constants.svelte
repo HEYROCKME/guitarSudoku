@@ -1,5 +1,17 @@
 <script context="module" lang="ts">
-    import {makeMusicalSpectre} from "./Functions.svelte";
+    
+    function makeMusicalSpectre(scale: string[]  ) {
+  let octaves = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+  let fullChromatic = []
+  
+  octaves.map( octave => {
+    scale.map(note => {
+    fullChromatic.push(note + octaves[octave])})
+	})
+	// console.log(fullChromatic)
+	return fullChromatic
+}
+
 //Chromatic scales
 export const chromaticScales ={
 	sharps: ["c", "c#", "d", "d#", "e", "f", "f#", "g", "g#", "a","a#","b"],
@@ -14,4 +26,13 @@ export const tuning = {
 
 export const chromaticFullRangeSharps = makeMusicalSpectre(chromaticScales.sharps)
 export const chromaticFullRangeFlats = makeMusicalSpectre(chromaticScales.flats)
+
+let majorScales = {
+	 C: ["c", "d", "e", "f", "g", "a", "b"],
+	 G: [ "g", "a", "b","c", "d", "e", "f#"],
+	 D: [ "d", "e", "f#", "g", "a", "b", "c#"],
+	 A: [ "a", "b", "c#", "d", "e", "f#", "g"],
+	 E: [ "e", "f#", "g", "a", "b", "c#", "d"] 
+	
+ }
 </script>
