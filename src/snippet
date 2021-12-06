@@ -2,7 +2,7 @@
 //     let guitarNeck = {
 //         firstString: [
 
-//             { fret: 0, noteName: "e", note: "e3" },
+//             { fret: 0, noteName: "e", note: "e3", css-class: "e3"},
 //             { fret: 1, noteName: "f", note: "f3" },
 //             { fret: 2, noteName: "f#", note: "f#3" },
 //             { fret: 3, noteName: "g", note: "g3" },
