@@ -17,10 +17,7 @@ export const guitarNeck = makeGuitarNeck(tuning.regular, frets, accidentals)
 
 export const theArray = []
 
-function renameClass() : string {
 
-  return ""
-}
 
 </script>
 
