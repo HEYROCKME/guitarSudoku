@@ -10,8 +10,14 @@ import NoteSelector from './noteSelector.svelte';
 
 <GuitarNeck/>
 <div class="selectors">
-	<NoteSelector kind="salmon"/> <NoteSelector kind="green"/>
+	<NoteSelector kind="pink"/> 
+	<NoteSelector kind="skyblue"/>
+	<NoteSelector kind="salmon"/>
+	<NoteSelector kind="lightgreen"/>
+	<NoteSelector kind="aquamarine"/>
+	<NoteSelector kind="goldenrod"/>
 </div>
+
 
 <h1>Harmony</h1>
 <div class="chordsheet">
