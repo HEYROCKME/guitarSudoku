@@ -1,26 +1,21 @@
 <script lang="ts">
 import {chromaticFullRangeFlats, chromaticFullRangeSharps } from './Constants.svelte'
-import { guitarNeck } from './GuitarNeck.svelte'
-import {onMount} from 'svelte'
+import { guitarNeck } from './NeckMaker.svelte'
 import { flats } from './stores'
+export let kind = "transparent"
 
-export let kind = "blue"
 let noteSelector
 
-let accidentals : boolean
+
 let select = ""
 let cssColor : string
+cssColor = kind
 
+let accidentals : boolean
 flats.subscribe(value => {
 	accidentals = value
 })
 
-
-
-cssColor = kind
-
-
-console.log(cssColor);
 	
 let chromatic = accidentals ? chromaticFullRangeFlats : chromaticFullRangeSharps    
 const noteRange =  [guitarNeck[5][0].noteName, guitarNeck[0][21].noteName]
@@ -28,8 +23,6 @@ const notesOnNeck = chromatic.slice(chromatic.indexOf(noteRange[0]), chromatic.i
 document.querySelectorAll(".note-selector").forEach((select)=> {select.classList.add(cssColor)})
 
 function handleChange() {
-	console.log(cssColor);
-	
 	document.querySelectorAll("."+cssColor).forEach(el => el.classList.remove(cssColor))
 	
 	let selector = "." + select
@@ -41,6 +34,7 @@ function handleChange() {
 	})
 		selectedNote.forEach(item => item.classList.add(cssColor))
 }
+
 </script>
 
 
