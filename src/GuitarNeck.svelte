@@ -38,7 +38,7 @@ export const guitarNeck = makeGuitarNeck(tuning.regular, frets, accidentals)
  .string-names {
    background-color: rgb(148, 141, 141);
  }
- .c3 {
+ /* .c3 {
    background-color: aqua;
  }
 
@@ -46,9 +46,15 @@ export const guitarNeck = makeGuitarNeck(tuning.regular, frets, accidentals)
    background-color: orange;
  }
 
- .g2 {background-color: blueviolet;}
+ .g2 {background-color: blueviolet;} */
 
  .pink {background-color: pink;}
+.salmon {background-color: salmon;}
+ .skyblue {background-color: skyblue;}
+ .lightgreen {background-color: lightgreen;}
+ .sandybrown {background-color: sandybrown;}
+ .aquamarine {background-color: aquamarine;}
+ .goldenrod {background-color: goldenrod;}
 </style>
 
 

@@ -2,17 +2,26 @@
 import HarmonyGrid from './HarmonyGrid.svelte'
 import GuitarNeck from './GuitarNeck.svelte'
 import NoteSelector from './noteSelector.svelte';
+
+
+
  
 </script>
 
 <GuitarNeck/>
 <div class="selectors">
-	<NoteSelector /> <NoteSelector />
+	<NoteSelector kind="pink"/> 
+	<NoteSelector kind="skyblue"/>
+	<NoteSelector kind="salmon"/>
+	<NoteSelector kind="lightgreen"/>
+	<NoteSelector kind="aquamarine"/>
+	<NoteSelector kind="goldenrod"/>
 </div>
+
 
 <h1>Harmony</h1>
 <div class="chordsheet">
-	<HarmonyGrid/> <HarmonyGrid/>
+	<HarmonyGrid /> <HarmonyGrid />
 </div>
 
 
