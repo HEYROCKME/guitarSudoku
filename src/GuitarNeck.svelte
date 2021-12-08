@@ -1,17 +1,5 @@
-<script lang="ts" context="module">
-import {makeGuitarNeck} from './Functions.svelte'
-import {tuning} from './Constants.svelte'
-import { flats } from './stores'
-
-let accidentals : boolean
-
-flats.subscribe(value => {
-  accidentals = value
-})
-flats.set(false)
-
-export const frets = 21
-export const guitarNeck = makeGuitarNeck(tuning.regular, frets, accidentals)
+<script lang="ts" >
+  import  { guitarNeck } from './NeckMaker.svelte'
 
 </script>
 
@@ -38,16 +26,7 @@ export const guitarNeck = makeGuitarNeck(tuning.regular, frets, accidentals)
  .string-names {
    background-color: rgb(148, 141, 141);
  }
- /* .c3 {
-   background-color: aqua;
- }
-
- .e3 {
-   background-color: orange;
- }
-
- .g2 {background-color: blueviolet;} */
-
+ 
  .pink {background-color: pink;}
 .salmon {background-color: salmon;}
  .skyblue {background-color: skyblue;}
