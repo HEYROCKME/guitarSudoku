@@ -1,39 +1,33 @@
 <script lang="ts" >
   import  { guitarNeck, frets } from './NeckMaker.svelte'
 
-  const regex = /\b([a-g]{1}\d{1})|([a-g](sharp)\d{1})\b/gi 
-  
-  
+  const noteRegex = /\b([a-g]{1}\d{1})|([a-g](sharp)\d{1})\b/gi 
+  const colorRegex = /\w+$/
   let displayFrets = []
   let fretCount = 0
-
+  let colors = [ "pink", "salmon", "skyblue", "lightgreen",
+  "sandybrown","aquamarine", "goldenrod"] 
+  let classCount = 0
 
   while (fretCount < frets +1) {
     displayFrets.push(fretCount)
     fretCount +=1
   }
 
- 
 const handleClick = (e) => {
-   document.querySelectorAll(".pink").forEach(item => {
-      item.classList.remove("pink")
-    })
-
-    let eventClass = "." + e.target.className.match(regex).toString()
-    let classCollected = document.querySelectorAll(eventClass)
-    
-    
-    classCollected.forEach(item => {
-      item.classList.add("pink")
-    })
-    
-    
-
-   
- 
-
-  console.log(eventClass, classCollected);
-  
+    let classEvent = e.target.className
+    let lastClass =  e.target.className.match(colorRegex).toString()
+    let noteClass = "." + classEvent.match(noteRegex).toString()
+    let classCollected = document.querySelectorAll(noteClass)
+     
+    if (colors.includes(lastClass)) {
+          classCollected.forEach(item => {
+          item.classList.remove(lastClass)})
+           classCount--   
+    }else {
+        classCollected.forEach(item => item.classList.add(colors[classCount]))
+        classCount+=1
+      }  
 }
 
 </script>
