@@ -19,7 +19,7 @@
       <td class="utility">string{i+1}</td>
    
    {#each fretboard as note}
-        <td class={note.classCSS}>{note.noteName}</td>
+        <td class="{note.classCSS} fret{note.fret}">{note.noteName}</td>
       {/each}
     </tr>
   {/each}
@@ -35,10 +35,81 @@
   * {padding: 0;}
 
  table td {
-   padding: 5px 7px;
+   padding: 4px 7px;
    text-align: center;
    background-color: antiquewhite;
  }
+
+ .fret0 {
+   background-color: rgb(236, 223, 206);
+ }
+ .fret1 {
+   min-width: 40px;
+ } 
+ .fret2 {
+    min-width: 39px; 
+  } 
+
+ .fret3 {
+   min-width: 38px;
+ } 
+ .fret4 {
+   min-width: 37px;
+ } 
+ .fret5 {
+   min-width: 36px;
+ } 
+ .fret6 {
+   min-width: 35px;
+ } 
+ .fret7 {
+   min-width: 34px;
+ } 
+ .fret8 {
+   min-width: 33px;
+ } 
+ .fret9 {
+   min-width: 32px;
+ } 
+ .fret10 {
+   min-width: 31px;
+   
+ } 
+ .fret11 {
+   min-width: 30px;
+ } 
+ .fret12 {
+   min-width: 29px;
+ } 
+ .fret13 {
+   min-width: 28px;
+ } 
+ .fret14 {
+   min-width: 27px;
+ } 
+ .fret15 {
+   min-width: 26px;
+ } 
+ .fret16 {
+   min-width: 25px;
+ } 
+ .fret17 {
+   min-width: 24px;
+ }
+
+ .fret18 {
+   min-width: 23px;
+ } 
+ .fret19 {
+   min-width: 22px;
+ } 
+ .fret20 {
+   min-width: 21px;
+ } 
+ .fret21 {
+   min-width: 20px;
+ } 
+ 
 
  .utility {
    background-color: transparent;
@@ -56,6 +127,9 @@
  .sandybrown {background-color: sandybrown;}
  .aquamarine {background-color: aquamarine;}
  .goldenrod {background-color: goldenrod;}
+
+
+ 
 </style>
 
 
