@@ -1,13 +1,40 @@
 <script lang="ts" >
   import  { guitarNeck, frets } from './NeckMaker.svelte'
 
+  const regex = /\b([a-g]{1}\d{1})|([a-g](sharp)\d{1})\b/gi 
+  
+  
   let displayFrets = []
   let fretCount = 0
+
 
   while (fretCount < frets +1) {
     displayFrets.push(fretCount)
     fretCount +=1
   }
+
+ 
+const handleClick = (e) => {
+   document.querySelectorAll(".pink").forEach(item => {
+      item.classList.remove("pink")
+    })
+
+    let eventClass = "." + e.target.className.match(regex).toString()
+    let classCollected = document.querySelectorAll(eventClass)
+    
+    
+    classCollected.forEach(item => {
+      item.classList.add("pink")
+    })
+    
+    
+
+   
+ 
+
+  console.log(eventClass, classCollected);
+  
+}
 
 </script>
 
@@ -19,7 +46,10 @@
       <td class="utility">string{i+1}</td>
    
    {#each fretboard as note}
-        <td class="{note.classCSS} fret{note.fret}">{note.noteName}</td>
+        <td 
+        class="fretboard {note.classCSS} fret{note.fret}"
+        on:click={handleClick}
+        >  {note.noteName}</td>
       {/each}
     </tr>
   {/each}
@@ -40,6 +70,10 @@
    background-color: antiquewhite;
  }
 
+ .fretboard:hover {
+background-color: rgb(224, 206, 105);
+
+ }
  .fret0 {
    background-color: rgb(236, 223, 206);
  }
