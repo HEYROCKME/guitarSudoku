@@ -16,7 +16,7 @@
   {#each guitarNeck as fretboard, i }
   
   <tr>
-      <td>string{i+1}</td>
+      <td class="utility">string{i+1}</td>
    
    {#each fretboard as note}
         <td class={note.classCSS}>{note.noteName}</td>
@@ -24,9 +24,9 @@
     </tr>
   {/each}
   <tr>
-    <td></td>
+    <td class="utility">frets</td>
     {#each displayFrets as frets, i}
-    <td>{i}</td>
+    <td class="utility">{i}</td>
     {/each}
   </tr>
 </table>
@@ -40,6 +40,10 @@
    background-color: antiquewhite;
  }
 
+ .utility {
+   background-color: transparent;
+   font-size: .8rem;
+ }
 
  .string-names {
    background-color: rgb(148, 141, 141);
