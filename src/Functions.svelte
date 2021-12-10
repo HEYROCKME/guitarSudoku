@@ -10,11 +10,11 @@ flats.subscribe(value => {
 
   //turns scale into mode
 export function getMode( scale: string[], scaleDegree: number) {
-//   let mode = []
-//   let notes = scale.slice(0,scaleDegree - 1)
+  let mode = []
+  let notes = scale.slice(0,scaleDegree - 1)
   let flippedNotes = scale.slice(- scale.length + (scaleDegree - 1))
-//   mode = notes.map(note => {flippedNotes.push(note)})
-  
+  mode = notes.map(note => {flippedNotes.push(note)})
+  console.log(flippedNotes)
   return flippedNotes
   
 } 
