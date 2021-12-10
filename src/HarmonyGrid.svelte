@@ -1,28 +1,29 @@
-<script type="module" lang="ts">
+<script lang="ts">
  
-    const chord = { 
-    chordName: "Am", 
-    chordKey: "A-minor (natural)",
-    chordTones: ["a", "c", "e"], 
-    harmonicFunction: "i",
-    scale: ["a", "b", "c", "d", "e", "f", "g"],
-    diatonicChords: ["i", "iib5", "III", "iv", "v", "bVI", "bVII" ],
-    strings: [
-          {openString: "e", stringNum: 1, fret: "0", noteName: "e", harmony: "5", note: "e3"},
-          {openString: "b", stringNum: 2, fret: "1", noteName: "c", harmony: "b3", note: "c3"},
-          {openString: "g", stringNum: 3, fret: "2", noteName: "a", harmony: "r", note:"a2" },
-          {openString: "d", stringNum: 4, fret: "2", noteName: "e", harmony: "5",  note:"e2"},
-          {openString: "a", stringNum: 5, fret: "0", noteName: "a", harmony: "r", note: "a1"},
-          {openString: "e", stringNum: 6, fret: "x", noteName: "-", harmony: "-", note: ""}
-                      ]
-      }
+    // const chord = { 
+    // chordName: "Am", 
+    // chordKey: "A-minor (natural)",
+    // chordTones: ["a", "c", "e"], 
+    // harmonicFunction: "i",
+    // scale: ["a", "b", "c", "d", "e", "f", "g"],
+    // diatonicChords: ["i", "iib5", "III", "iv", "v", "bVI", "bVII" ],
+    // strings: [
+    //       {openString: "e", stringNum: 1, fret: "0", noteName: "e", harmony: "5", note: "e3"},
+    //       {openString: "b", stringNum: 2, fret: "1", noteName: "c", harmony: "b3", note: "c3"},
+    //       {openString: "g", stringNum: 3, fret: "2", noteName: "a", harmony: "r", note:"a2" },
+    //       {openString: "d", stringNum: 4, fret: "2", noteName: "e", harmony: "5",  note:"e2"},
+    //       {openString: "a", stringNum: 5, fret: "0", noteName: "a", harmony: "r", note: "a1"},
+    //       {openString: "e", stringNum: 6, fret: "x", noteName: "-", harmony: "-", note: ""}
+    //                   ]
+    //   }
   
   class GuitarChord {
       chordName : string
       chordKey  : string
       harmonicFunction : string
-      strings : {}[]
+      strings : {}
       scale : string[]
+	  
   
   
   
@@ -32,14 +33,32 @@
           this.harmonicFunction = harmonicFunction
           this.strings = strings
           this.scale = scale
+		 
           
   
       }
   }
+//   export let onStrings = []
+  export let chordName = "Am"
+  export let harmonicFunction = "i"
 
+  let chordKey = "A-minor natural"
+  let scale = ["a", "b", "c", "d", "e", "f", "g"]
+  let diatonicChords: ["i", "iib5", "III", "iv", "v", "bVI", "bVII" ]
+  export let strings =  [
+          {openString: "e", stringNum: 1, fret: "0", noteName: "e", harmony: "5", note: "e3"},
+          {openString: "b", stringNum: 2, fret: "1", noteName: "c", harmony: "b3", note: "c3"},
+          {openString: "g", stringNum: 3, fret: "2", noteName: "a", harmony: "r", note:"a2" },
+          {openString: "d", stringNum: 4, fret: "2", noteName: "e", harmony: "5",  note:"e2"},
+          {openString: "a", stringNum: 5, fret: "0", noteName: "a", harmony: "r", note: "a1"},
+          {openString: "e", stringNum: 6, fret: "x", noteName: "-", harmony: "-", note: ""}
+                      ]
+      
 
+  const chord = new GuitarChord(chordName, chordKey, harmonicFunction, scale, strings)
  
 
+  console.log(chord)
 
 
 </script>
@@ -114,7 +133,7 @@
 
 .chord-grid td  {
 	/* border: solid 1px salmon; */
-	width: 2em;
+	width: 1.5em;
 	padding: 0;
 	margin: 0;
 	text-align: center;
