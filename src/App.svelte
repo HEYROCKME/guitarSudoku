@@ -21,7 +21,16 @@ import NoteSelector from './noteSelector.svelte';
 
 <h1>Harmony</h1>
 <div class="chordsheet">
-	<HarmonyGrid /> <HarmonyGrid />
+	<HarmonyGrid chordName="Em" 
+	strings =  {[
+          {openString: "e", stringNum: 1, fret: "0", noteName: "e", harmony: "r", note: "e3"},
+          {openString: "b", stringNum: 2, fret: "0", noteName: "b", harmony: "5", note: "b2"},
+          {openString: "g", stringNum: 3, fret: "0", noteName: "g", harmony: "b3", note:"g2" },
+          {openString: "d", stringNum: 4, fret: "2", noteName: "e", harmony: "r",  note:"e2"},
+          {openString: "a", stringNum: 5, fret: "2", noteName: "b", harmony: "5", note: "b1"},
+          {openString: "e", stringNum: 6, fret: "0", noteName: "e", harmony: "r", note: "e1"}
+                      ]}
+	/> <HarmonyGrid  chordName="Am"/>
 </div>
 
 
