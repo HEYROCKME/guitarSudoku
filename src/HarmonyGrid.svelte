@@ -58,7 +58,7 @@
   const chord = new GuitarChord(chordName, chordKey, harmonicFunction, scale, strings)
  
 
-  console.log(chord)
+//   console.log(chord)
 
 
 </script>

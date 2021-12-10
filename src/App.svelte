@@ -2,11 +2,14 @@
 import HarmonyGrid from './HarmonyGrid.svelte'
 import GuitarNeck from './GuitarNeck.svelte'
 import NoteSelector from './noteSelector.svelte';
+import ScaleToChord from './ScaleToChord.svelte';
 
 
 
  
 </script>
+
+<ScaleToChord/>
 
 <GuitarNeck/>
 <div class="selectors">
