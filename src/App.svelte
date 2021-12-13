@@ -2,14 +2,38 @@
 import HarmonyGrid from './HarmonyGrid.svelte'
 import GuitarNeck from './GuitarNeck.svelte'
 import NoteSelector from './noteSelector.svelte';
-import ScaleToChord from './ScaleToChord.svelte';
+import {makeScale} from './ScaleToChord.svelte';
 
+
+import {getMode, makeChord} from './Functions.svelte'
+import { chromaticScales } from "./Constants.svelte";
+
+let cMajor = makeScale(chromaticScales.flats, "major")
+let cMinor = makeScale(chromaticScales.flats, "major")
+let fMinor = makeScale(getMode(chromaticScales.flats, 6), "minor")
+
+let chromatic = getMode(chromaticScales.sharps, 6)
+let fLydian = getMode(cMajor, 4)
+
+console.log(fMinor)
+let fMinorChords = []
 
 
  
 </script>
 
-<ScaleToChord/>
+<h1>Guitar Sudoku</h1>
+
+<h2>the makeScale() function</h2>
+
+<p>C Major: {cMajor}</p>
+<p>C minor: {cMinor}</p>
+<p>chromatic {chromatic}</p>
+<p>F lydian mode: {fLydian}</p>
+<p>F minor: {fMinor}</p> 
+
+<h2>Make chords</h2>
+<p></p>
 
 <GuitarNeck/>
 <div class="selectors">

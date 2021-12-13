@@ -1,7 +1,7 @@
-<script lang="ts">
+<script lang="ts" context="module">
 
-import {getMode} from './Functions.svelte'
-import { chromaticScales } from "./Constants.svelte";
+// import {getMode} from './Functions.svelte'
+// import { chromaticScales } from "./Constants.svelte";
 
 let regex = /[a-z][b]\b/g
 
@@ -11,29 +11,29 @@ const scaleRecipies = {
 }
 
 
-function makeScale(chromatics : string[], scaleType: string) {
+export function makeScale(chromatics : string[], scaleType: string) {
     let scale = []
     if (scaleType === "major") {
         scaleRecipies.major.forEach(step => scale.push(chromatics[step -1]))    
     } else {
-        scaleRecipies.minor.forEach(step => scale.push(chromaticScales.flats[step -1]))
+        scaleRecipies.minor.forEach(step => scale.push(chromatics[step -1]))
     }
     
    let newScale = scale.map((item) => 
    {return item.replace(regex, item[0] + "♭" )} )
 
-    console.log(newScale);
+    // console.log(newScale);
     
     return newScale
 
 }
 
-let cMajor = makeScale(chromaticScales.flats, "major")
-let cMinor = makeScale(chromaticScales.flats, "major")
-let fMinor = makeScale(getMode(chromaticScales.sharps, 6), "minor")
+// let cMajor = makeScale(chromaticScales.flats, "major")
+// let cMinor = makeScale(chromaticScales.flats, "major")
+// let fMinor = makeScale(getMode(chromaticScales.sharps, 6), "minor")
 
-let chromatic = getMode(chromaticScales.sharps, 6)
-let fLydian = getMode(cMajor, 4)
+// let chromatic = getMode(chromaticScales.sharps, 6)
+// let fLydian = getMode(cMajor, 4)
  
 
 
@@ -44,9 +44,9 @@ let fLydian = getMode(cMajor, 4)
 
 
 </script>
-<h1>Generated scales</h1>
+<!-- <h1>Generated scales</h1>
 <p>C Major: {cMajor}</p>
 <p>C minor: {cMinor}</p>
 <p>chromatic {chromatic}</p>
 <p>F lydian mode: {fLydian}</p>
-<p>F minor: {fMinor}</p>
+<p>F minor: {fMinor}</p> -->
