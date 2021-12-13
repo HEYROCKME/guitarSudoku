@@ -21,7 +21,7 @@ let fLydian = getMode(cMajor, 4)
 // Suggestion: notesInChord can be set to an enum 1 - 6 
 function makeDiatonicChords(scale : string[], notesInChord : number ) {
   let diatonicChords = []
-  scale.forEach((note, index, array) => { 
+  scale.map((note, index, array) => { 
     let chord = makeChord(getMode(scale, index + 1 ), notesInChord)
 	diatonicChords.push(chord)
 })
@@ -30,7 +30,7 @@ return diatonicChords
 
 
 }
-let cMajorChords = makeDiatonicChords(cMajor, 3)
+let cMajorChords = makeDiatonicChords(cMajor, 4)
 console.log(cMajorChords);
 
 
@@ -46,8 +46,27 @@ console.log(cMajorChords);
 <p>F lydian mode: {fLydian}</p>
 <p>F minor: {fMinor}</p> 
 
-<h2>Make chords</h2>
-<p></p>
+<div class="docs">
+
+	<h2>Make Diatonic chords</h2>
+	<p>
+		The <b>makeDiatonicChords()</b> function takes scale (Array) and notesInChord (number) 	as arguments.This function runs a map method on the scale array, wich passes the getMode() function, with scale and the "index", added by 1, as arguments thru the makeChord() function, together with "noteInChord". The return is a nested a array populated by arrays of note names of each chord.  
+	
+	</p>
+</div>
+
+ { #each cMajorChords as chord, o }
+ <div class="diatonic-chord" >
+   { #each chord as note, i }
+    <p 
+	class="note" 
+	style="background-color: hsl({(i * 51) + (o * 153)}, 50%, 65%)"
+	>
+	{note} </p>
+  { /each }
+</div>
+ { /each }
+
 
 <GuitarNeck/>
 <div class="selectors">
@@ -88,5 +107,23 @@ console.log(cMajorChords);
 		flex-direction: row;
 	}
 
-	
+	.diatonic-chord {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		max-width :100px;
+		margin-bottom: .5em;
+		margin-left: 2em;
+	}
+	.note {
+		display: inline;
+		margin-right: .5rem;
+		padding: .5em;
+		
+		
+	}
+
+	.docs {
+		max-width: 600px;
+	}
 </style>
