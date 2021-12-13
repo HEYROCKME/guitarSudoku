@@ -15,11 +15,25 @@ let fMinor = makeScale(getMode(chromaticScales.flats, 6), "minor")
 let chromatic = getMode(chromaticScales.sharps, 6)
 let fLydian = getMode(cMajor, 4)
 
-console.log(fMinor)
-let fMinorChords = []
 
 
- 
+
+// Suggestion: notesInChord can be set to an enum 1 - 6 
+function makeDiatonicChords(scale : string[], notesInChord : number ) {
+  let diatonicChords = []
+  scale.forEach((note, index, array) => { 
+    let chord = makeChord(getMode(scale, index + 1 ), notesInChord)
+	diatonicChords.push(chord)
+})
+
+return diatonicChords
+
+
+}
+let cMajorChords = makeDiatonicChords(cMajor, 3)
+console.log(cMajorChords);
+
+
 </script>
 
 <h1>Guitar Sudoku</h1>
