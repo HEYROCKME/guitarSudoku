@@ -5,7 +5,7 @@ import NoteSelector from './noteSelector.svelte';
 import {makeScale} from './ScaleToChord.svelte';
 
 
-import {getMode, makeChord} from './Functions.svelte'
+import {getMode, makeChord, makeDiatonicChords} from './Functions.svelte'
 import { chromaticScales } from "./Constants.svelte";
 
 let cMajor = makeScale(chromaticScales.flats, "major")
@@ -16,20 +16,6 @@ let chromatic = getMode(chromaticScales.sharps, 6)
 let fLydian = getMode(cMajor, 4)
 
 
-
-
-// Suggestion: notesInChord can be set to an enum 1 - 6 
-function makeDiatonicChords(scale : string[], notesInChord : number ) {
-  let diatonicChords = []
-  scale.map((note, index, array) => { 
-    let chord = makeChord(getMode(scale, index + 1 ), notesInChord)
-	diatonicChords.push(chord)
-})
-
-return diatonicChords
-
-
-}
 let cMajorChords = makeDiatonicChords(cMajor, 4)
 console.log(cMajorChords);
 
@@ -55,28 +41,29 @@ console.log(cMajorChords);
 	</p>
 </div>
 
- { #each cMajorChords as chord, o }
+{ #each cMajorChords as chord, o }
  <div class="diatonic-chord" >
+	 <p>{o + 1}</p>
    { #each chord as note, i }
     <p 
 	class="note" 
 	style="background-color: hsl({(i * 51) + (o * 153)}, 50%, 65%)"
 	>
-	{note} </p>
+	{note}, </p>
   { /each }
 </div>
- { /each }
+{ /each }
 
 
 <GuitarNeck/>
-<div class="selectors">
+<!-- <div class="selectors">
 	<NoteSelector kind="pink"/> 
 	<NoteSelector kind="skyblue"/>
 	<NoteSelector kind="salmon"/>
 	<NoteSelector kind="lightgreen"/>
 	<NoteSelector kind="aquamarine"/>
 	<NoteSelector kind="goldenrod"/>
-</div>
+</div> -->
 
 
 <h1>Harmony</h1>
@@ -90,7 +77,8 @@ console.log(cMajorChords);
           {openString: "a", stringNum: 5, fret: "2", noteName: "b", harmony: "5", note: "b1"},
           {openString: "e", stringNum: 6, fret: "0", noteName: "e", harmony: "r", note: "e1"}
                       ]}
-	/> <HarmonyGrid  chordName="Am"/>
+	/> 
+	<HarmonyGrid  chordName="Am"/>
 </div>
 
 
@@ -118,8 +106,7 @@ console.log(cMajorChords);
 	.note {
 		display: inline;
 		margin-right: .5rem;
-		padding: .5em;
-		
+		padding: .5em;		
 		
 	}
 

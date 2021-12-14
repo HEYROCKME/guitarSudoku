@@ -1,16 +1,25 @@
 <script context="module" lang="ts">
     
-    function makeMusicalSpectre(scale: string[]  ) {
+
+	// Spread a scale over full spectre
+function makeMusicalSpectre(scale: string[]  ) {
   let octaves = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
   let fullChromatic = []
-  
+
   octaves.map( octave => {
     scale.map(note => {
-    fullChromatic.push(note + octaves[octave])})
-	})
-	// console.log(fullChromatic)
-	return fullChromatic
+      fullChromatic.push(note + octaves[octave])})
+	  })
+	
+  return fullChromatic
 }
+
+// ROMAN Numerals
+export const romanNumerals = {
+	  upperCase: [ "I", "II", "III", "IV", "V", "VI", "VII" ],
+	  lowerCase: [ "i", "ii", "iii", "iv", "v", "vi", "vii" ]
+}
+
 
 //Chromatic scales
 export const chromaticScales ={

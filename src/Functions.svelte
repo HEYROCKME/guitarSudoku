@@ -74,5 +74,19 @@ export function makeGuitarNeck(tuning: string[], frets: number, flats : boolean)
  return neck
 }
 
+// MAKE DIATONIC CHORDS
+
+export function makeDiatonicChords(scale : string[], notesInChord : number ) {
+  let diatonicChords = []
+  scale.map((note, index, array) => { 
+    let chord = makeChord(getMode(scale, index + 1 ), notesInChord)
+	diatonicChords.push(chord)
+})
+
+return diatonicChords
+
+
+}
+
 </script>
 

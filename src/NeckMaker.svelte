@@ -12,4 +12,5 @@ flats.set(false)
 
 export const frets = 21
 export const guitarNeck = makeGuitarNeck(tuning.regular, frets, accidentals)
+console.log(guitarNeck)
 </script>
