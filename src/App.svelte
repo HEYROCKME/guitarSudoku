@@ -3,9 +3,7 @@ import HarmonyGrid from './HarmonyGrid.svelte'
 import GuitarNeck from './GuitarNeck.svelte'
 import NoteSelector from './noteSelector.svelte';
 import {makeScale} from './ScaleToChord.svelte';
-
-
-import {getMode, makeChord, makeDiatonicChords} from './Functions.svelte'
+import {getMode, makeDiatonicChords} from './Functions.svelte'
 import { chromaticScales } from "./Constants.svelte";
 
 let cMajor = makeScale(chromaticScales.flats, "major")
