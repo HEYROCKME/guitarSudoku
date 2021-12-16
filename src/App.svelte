@@ -1,28 +1,31 @@
 <script lang="ts">
 import HarmonyGrid from './HarmonyGrid.svelte'
 import GuitarNeck from './GuitarNeck.svelte'
+import DiatonicHarmony from './DiatonicHarmony.svelte';
 // import NoteSelector from './noteSelector.svelte';
-import {makeScale} from './ScaleToChord.svelte';
-import {getMode, makeDiatonicChords} from './Functions.svelte'
-import { chromaticScales, romanNumerals } from "./Constants.svelte";
+// import {makeScale} from './ScaleToChord.svelte';
+// import {getMode, makeDiatonicChords} from './Functions.svelte'
+// import { chromaticScales, romanNumerals } from "./Constants.svelte";
 
-let cMajor = makeScale(chromaticScales.flats, "major")
-let cMinor = makeScale(chromaticScales.flats, "major")
-let fMinor = makeScale(getMode(chromaticScales.flats, 6), "minor")
+// let cMajor = makeScale(chromaticScales.flats, "major")
+// let cMinor = makeScale(chromaticScales.flats, "major")
+// let fMinor = makeScale(getMode(chromaticScales.flats, 6), "minor")
 
-let chromatic = getMode(chromaticScales.sharps, 6)
-let fLydian = getMode(cMajor, 4)
+// let chromatic = getMode(chromaticScales.sharps, 6)
+// let fLydian = getMode(cMajor, 4)
 
 
-let cMajorChords = makeDiatonicChords(cMajor, 4)
-console.log(cMajorChords);
+// let cMajorChords = makeDiatonicChords(cMajor, 4)
+// console.log(cMajorChords);
 
 
 </script>
 
 <h1>Guitar Sudoku</h1>
 
-<h2>the makeScale() function</h2>
+<DiatonicHarmony/>
+
+<!-- <h2>the makeScale() function</h2>
 
 <p>C Major: {cMajor}</p>
 <p>C minor: {cMinor}</p>
@@ -50,7 +53,7 @@ console.log(cMajorChords);
 	{note}, </p>
   { /each }
 </div>
-{ /each }
+{ /each } -->
 
 
 <GuitarNeck/>
