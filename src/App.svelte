@@ -96,32 +96,6 @@ import DiatonicHarmony from './DiatonicHarmony.svelte';
 		flex-direction: row;
 	}
 
-	.diatonic-chord {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-evenly;
-		align-items: center;
-		max-width :100px;
-		margin-bottom: .5em;
-		margin-left: 2em;
-	}
-	.note {
-		display: inline;
-		margin-right: .5rem;
-		padding: .5em;		
-		
-	}
 
-	.docs {
-		max-width: 600px;
-	}
-
-	.roman-numerals {
-		min-width: 40px;
-		margin-left: 3em; 
-		padding-right: 1em;
-		font-weight: bold;
-		
-
-	}
+	
 </style>

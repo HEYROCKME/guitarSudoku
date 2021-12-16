@@ -75,6 +75,6 @@ console.log(cMajorChords);
 		margin-left: 3em; 
 		padding-right: 1em;
 		font-weight: bold;
-		
+    }	
     
 </style>
