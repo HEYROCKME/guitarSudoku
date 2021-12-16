@@ -1,7 +1,7 @@
 # guitarSudoku
 
-Guitar sudoku is a shorthand guitar cord method for studying harmony and the notation everything chord related on electric guitar.
-The concept is at it's heart a handwritten process. The aim for this application is to provide a number of support function to present the concept...
+Guitar sudoku is a shorthand guitar chord methodology for studying harmony and the notation of everything chord related on electric guitar.
+The concept is at it's heart a handwritten process. The aim for this application is to provide a number of support tools to help practitioners use the concept...
 
 
 # svelte app
