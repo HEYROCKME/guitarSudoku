@@ -1,10 +1,10 @@
 <script lang="ts">
 import HarmonyGrid from './HarmonyGrid.svelte'
 import GuitarNeck from './GuitarNeck.svelte'
-import NoteSelector from './noteSelector.svelte';
+// import NoteSelector from './noteSelector.svelte';
 import {makeScale} from './ScaleToChord.svelte';
 import {getMode, makeDiatonicChords} from './Functions.svelte'
-import { chromaticScales } from "./Constants.svelte";
+import { chromaticScales, romanNumerals } from "./Constants.svelte";
 
 let cMajor = makeScale(chromaticScales.flats, "major")
 let cMinor = makeScale(chromaticScales.flats, "major")
@@ -83,10 +83,10 @@ console.log(cMajorChords);
 <style>
 	 * {padding: 0;}
 
-	.selectors {
+	/* .selectors {
 		display: flex;
 		flex-direction: row;
-	}
+	} */
 
 	.chordsheet {
 		display: flex;

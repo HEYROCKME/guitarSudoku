@@ -16,8 +16,10 @@ function makeMusicalSpectre(scale: string[]  ) {
 
 // ROMAN Numerals
 export const romanNumerals = {
-	  upperCase: [ "I", "II", "III", "IV", "V", "VI", "VII" ],
-	  lowerCase: [ "i", "ii", "iii", "iv", "v", "vi", "vii" ]
+	  upperCaseTwelveTone: [ "I", "(b)II", "II","(b)III", "III", "IV", "(b)V", "V", "(b)VI", "VI", "(b)VII", "VII" ],
+	  lowerCaseTwelveTone: [ "i", "(b)ii", "ii", "(b)iii", "iii", "iv", "(b)v", "v", "(b)vi", "vi", "(b)vii", "vii" ],
+	  majorScale: ["I", "ii", "iii", "IV", "V", "vi", "viib5"],
+	  minorScale: ["i", "iib5", "III", "iv", "v", "(b)VI", "(b)VII"]
 }
 
 
