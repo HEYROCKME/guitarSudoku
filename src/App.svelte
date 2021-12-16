@@ -41,7 +41,7 @@ console.log(cMajorChords);
 
 { #each cMajorChords as chord, o }
  <div class="diatonic-chord" >
-	 <p>{o + 1}</p>
+	 <p class="roman-numerals">{romanNumerals.majorScale[o]}</p>
    { #each chord as note, i }
     <p 
 	class="note" 
@@ -97,6 +97,7 @@ console.log(cMajorChords);
 		display: flex;
 		flex-direction: row;
 		justify-content: space-evenly;
+		align-items: center;
 		max-width :100px;
 		margin-bottom: .5em;
 		margin-left: 2em;
@@ -110,5 +111,14 @@ console.log(cMajorChords);
 
 	.docs {
 		max-width: 600px;
+	}
+
+	.roman-numerals {
+		min-width: 40px;
+		margin-left: 3em; 
+		padding-right: 1em;
+		font-weight: bold;
+		
+
 	}
 </style>
