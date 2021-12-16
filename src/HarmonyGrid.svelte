@@ -24,18 +24,12 @@
       strings : {}
       scale : string[]
 	  
-  
-  
-  
       constructor(chordName, chordKey, harmonicFunction, scale, strings ) {
           this.chordName = chordName
           this.chordKey = chordKey
           this.harmonicFunction = harmonicFunction
           this.strings = strings
           this.scale = scale
-		 
-          
-  
       }
   }
 //   export let onStrings = []
@@ -53,7 +47,6 @@
           {openString: "a", stringNum: 5, fret: "0", noteName: "a", harmony: "r", note: "a1"},
           {openString: "e", stringNum: 6, fret: "x", noteName: "-", harmony: "-", note: ""}
                       ]
-      
 
   const chord = new GuitarChord(chordName, chordKey, harmonicFunction, scale, strings)
  
