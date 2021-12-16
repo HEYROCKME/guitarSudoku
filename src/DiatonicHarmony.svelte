@@ -12,7 +12,7 @@ let fLydian = getMode(cMajor, 4)
 
 
 let cMajorChords = makeDiatonicChords(cMajor, 4)
-
+console.log(cMajorChords);
 </script>
 
 
@@ -22,7 +22,7 @@ let cMajorChords = makeDiatonicChords(cMajor, 4)
 
 <p>C Major: {cMajor}</p>
 <p>C minor: {cMinor}</p>
-<p>chromatic: {chromatic}</p>
+<p>chromatic {chromatic}</p>
 <p>F lydian mode: {fLydian}</p>
 <p>F minor: {fMinor}</p> 
 
@@ -76,7 +76,5 @@ let cMajorChords = makeDiatonicChords(cMajor, 4)
 		padding-right: 1em;
 		font-weight: bold;
 		
-
-	}
-
+    
 </style>
