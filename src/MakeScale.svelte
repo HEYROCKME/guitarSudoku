@@ -3,11 +3,11 @@ import {makeScale, getMode} from './Functions.svelte'
 import {chromaticScales} from './Constants.svelte'
 
 export let noteName : string
-// export let scaleType : string
+export let scaleType : string
 
 let notePosition = chromaticScales.flats.indexOf(noteName)
 
-let Major = makeScale(getMode(chromaticScales.flats, notePosition), "major")
+let Major = makeScale(getMode(chromaticScales.flats, notePosition), scaleType.toLowerCase())
 // let cMinor = makeScale(chromaticScales.flats, "major")
 // let fMinor = makeScale(getMode(chromaticScales.flats, 6), "minor")
 
