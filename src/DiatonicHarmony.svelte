@@ -1,5 +1,5 @@
 <script lang="ts">
-import {makeScale} from './ScaleToChord.svelte';
+import {makeScale} from './Functions.svelte';
 import {getMode, makeDiatonicChords} from './Functions.svelte'
 import { chromaticScales, romanNumerals } from "./Constants.svelte"
 
