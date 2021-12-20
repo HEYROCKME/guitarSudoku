@@ -1,18 +1,19 @@
 <script context="module" lang="ts">
+	import {makeMusicalSpectre } from './Functions.svelte'
     
 
 	// Spread a scale over full spectre
-function makeMusicalSpectre(scale: string[]  ) {
-  let octaves = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-  let fullChromatic = []
+// function makeMusicalSpectre(scale: string[]  ) {
+//   let octaves = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+//   let fullChromatic = []
 
-  octaves.map( octave => {
-    scale.map(note => {
-      fullChromatic.push(note + octaves[octave])})
-	  })
+//   octaves.map( octave => {
+//     scale.map(note => {
+//       fullChromatic.push(note + octaves[octave])})
+// 	  })
 	
-  return fullChromatic
-}
+//   return fullChromatic
+// }
 
 // ROMAN Numerals
 export const romanNumerals = {
@@ -46,4 +47,15 @@ let majorScales = {
 	 E: [ "e", "f#", "g", "a", "b", "c#", "d"] 
 	
  }
+
+
+// ScaleToChord Component 
+
+export const regexFindFlats = /[a-z][b]\b/g
+
+export const scaleRecipies = {
+    major: [1, 3, 5, 6, 8, 10, 12],
+    minor: [1, 3, 4, 6, 8, 9, 11]
+}
+
 </script>

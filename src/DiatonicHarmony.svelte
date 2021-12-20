@@ -1,30 +1,15 @@
 <script lang="ts">
-import {makeScale} from './ScaleToChord.svelte';
+import {makeScale} from './Functions.svelte';
 import {getMode, makeDiatonicChords} from './Functions.svelte'
 import { chromaticScales, romanNumerals } from "./Constants.svelte"
 
 let cMajor = makeScale(chromaticScales.flats, "major")
-let cMinor = makeScale(chromaticScales.flats, "major")
-let fMinor = makeScale(getMode(chromaticScales.flats, 6), "minor")
-
-let chromatic = getMode(chromaticScales.sharps, 6)
-let fLydian = getMode(cMajor, 4)
-
-
 let cMajorChords = makeDiatonicChords(cMajor, 4)
 console.log(cMajorChords);
 </script>
 
 
-<h1>Guitar Sudoku</h1>
 
-<h2>the makeScale() function</h2>
-
-<p>C Major: {cMajor}</p>
-<p>C minor: {cMinor}</p>
-<p>chromatic {chromatic}</p>
-<p>F lydian mode: {fLydian}</p>
-<p>F minor: {fMinor}</p> 
 
 <div class="docs">
 

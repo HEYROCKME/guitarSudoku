@@ -1,5 +1,6 @@
 <script lang="ts" context="module">
 import {chromaticFullRangeSharps, chromaticFullRangeFlats} from './Constants.svelte'
+import {regexFindFlats, scaleRecipies} from './Constants.svelte'
 import { flats } from './stores'
 
 let accidentals : boolean
@@ -85,6 +86,23 @@ export function makeDiatonicChords(scale : string[], notesInChord : number ) {
 
 return diatonicChords
 
+
+}
+
+export function makeScale(chromatics : string[], scaleType: string) {
+    let scale = []
+    if (scaleType === "major") {
+        scaleRecipies.major.forEach(step => scale.push(chromatics[step -1]))    
+    } else {
+        scaleRecipies.minor.forEach(step => scale.push(chromatics[step -1]))
+    }
+    
+   let newScale = scale.map((item) => 
+   {return item.replace(regexFindFlats, item[0] + "♭" )} )
+
+    // console.log(newScale);
+    
+    return newScale
 
 }
 
