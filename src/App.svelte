@@ -2,13 +2,15 @@
 import HarmonyGrid from './HarmonyGrid.svelte'
 import GuitarNeck from './GuitarNeck.svelte'
 import DiatonicHarmony from './DiatonicHarmony.svelte';
+import MakeScale from './MakeScale.svelte'
 
 </script>
 
 <h1>Guitar Sudoku</h1>
 
-<DiatonicHarmony/>
-<GuitarNeck/>
+<MakeScale />
+<DiatonicHarmony />
+<GuitarNeck />
 
 
 <h1>Harmony</h1>
