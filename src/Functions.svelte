@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-import {chromaticFullRangeSharps, chromaticFullRangeFlats} from './Constants.svelte'
+import {chromaticFullRangeSharps, chromaticFullRangeFlats} from './Constants/Scales.svelte'
 import {regexFindFlats, scaleRecipies} from './Constants.svelte'
 import { flats } from './stores'
 

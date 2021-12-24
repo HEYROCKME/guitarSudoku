@@ -9,6 +9,7 @@ import MakeScale from './MakeScale.svelte'
 <h1>Guitar Sudoku</h1>
 
 <MakeScale noteName="e" scaleType="major" />
+<MakeScale noteName="d" scaleType="minor_melodic"/>
 <DiatonicHarmony />
 <GuitarNeck />
 
