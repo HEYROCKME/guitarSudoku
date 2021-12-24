@@ -20,6 +20,7 @@ let Major = makeScale(getMode(chromaticScales.flats, notePosition), scaleType)
 </script>
 
 <h2>the makeScale() function</h2>
+<p>There are a few bugs and issues in this function that needs to be adressed!</p>
 
 <p>{noteName.toUpperCase()} {scaleType}: {Major}</p>
 <!-- <p>C minor: {cMinor}</p>
