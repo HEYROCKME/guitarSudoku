@@ -7,8 +7,9 @@ export let noteName : string
 export let scaleType : string
 
 let notePosition = chromaticScales.flats.indexOf(noteName)
+console.log(notePosition, chromaticScales.flats[notePosition])
 
-let Major = makeScale(getMode(chromaticScales.flats, notePosition), scaleType)
+let Major = makeScale(getMode(chromaticScales.flats, notePosition +1), scaleType)
 // let cMinor = makeScale(chromaticScales.flats, "major")
 // let fMinor = makeScale(getMode(chromaticScales.flats, 6), "minor")
 

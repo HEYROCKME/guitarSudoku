@@ -100,7 +100,7 @@ export function makeScale(chromatics : string[], scaleType: string) {
    let newScale = scale.map((item) => 
    {return item.replace(regexFindFlats, item[0] + "♭" )} )
 
-    // console.log(newScale);
+    console.log(scale, newScale);
     
     return newScale
 

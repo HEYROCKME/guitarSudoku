@@ -10,6 +10,12 @@ export const romanNumerals = {
 	  minorScale: ["i", "iib5", "III", "iv", "v", "(b)VI", "(b)VII"]
 }
 
+// Export CircleOfFiths
+
+export const CircleOfFiths = {
+	sharp: ["c", "g", "d", "a", "e", "b", "f", "c#"],
+	flat: ["c", "f", "b", "eb", "ab", "db", "gb", "cb"]
+}
 
 //Chromatic scales
 export const chromaticScales ={
