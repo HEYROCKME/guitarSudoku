@@ -51,6 +51,9 @@ import MakeScale from './MakeScale.svelte'
 <footer>
 	<p>
 		made by <a href="https://grafisker.no">HEYROCKME|Grafisker</a> 
+		
+		<a href="https://github.com/HEYROCKME/guitarSudoku">github.com/HEYROCKME/guitarSudoku</a>
+		
 	</p>
 	  
 </footer>
