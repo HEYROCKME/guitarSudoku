@@ -5,3 +5,5 @@ The concept is at it's heart a handwritten process. The aim for this application
 
 
 This is an svelte app.
+
+A live version is currently hosted here https://guitarsudoku.vercel.app/
