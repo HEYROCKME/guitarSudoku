@@ -41,7 +41,7 @@ const handleClick = (e) => {
    
    {#each fretboard as note}
         <td 
-        class="fretboard {note.classCSS} fret{note.fret}"
+        class="fretted-note fretboard {note.classCSS} fret{note.fret}"
         on:click={handleClick}
         >  {note.noteName}</td>
       {/each}
@@ -141,11 +141,15 @@ background-color: rgb(224, 206, 105);
 
  .utility {
    background-color: transparent;
-   font-size: .8rem;
+   font-size: .5rem;
  }
 
  .string-names {
    background-color: rgb(148, 141, 141);
+ }
+
+ .fretted-note {
+  font-size: .8rem;
  }
  
  .pink {background-color: pink;}
