@@ -9,7 +9,9 @@ import MakeScale from './MakeScale.svelte'
 
 <header>
 	<h1>Guitar Sudoku Tools V0.01a</h1>
-	<span>Guitar Sudoku Tools aims to be a code library that generates guitar lessons material APIs related to the Guitar Sudoku method.</span>
+	<p>
+		<span id="intro">Guitar Sudoku Tools aims to be a code library that generates guitar lessons material APIs related to the Guitar Sudoku method.</span>
+	</p>
 </header>
 
 <main>
@@ -74,8 +76,11 @@ import MakeScale from './MakeScale.svelte'
  header {
 	padding: 3em;
 	margin: 0 auto;
-	width: 50vw;
+	width: 80vw;
 	
+ }
+ header p {
+	width: 50vw;
  }
 
  main {
