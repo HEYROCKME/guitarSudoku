@@ -32,7 +32,7 @@ const handleClick = (e) => {
 
 </script>
 
-<h1>Guitar neck</h1>
+<h2>Guitar neck</h2>
 <table>
   {#each guitarNeck as fretboard, i }
   

@@ -1,5 +1,5 @@
 <script lang="ts">
-import {chromaticFullRangeFlats, chromaticFullRangeSharps } from './Constants.svelte'
+import {chromaticFullRangeFlats, chromaticFullRangeSharps } from './Constants/Scales.svelte'
 import { guitarNeck } from './NeckMaker.svelte'
 import { flats } from './stores'
 export let kind = "transparent"
