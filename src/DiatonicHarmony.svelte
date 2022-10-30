@@ -1,6 +1,6 @@
 <script lang="ts">
 import {makeScale} from './Functions.svelte';
-import {getMode, makeDiatonicChords} from './Functions.svelte'
+import { makeDiatonicChords} from './Functions.svelte'
 import { chromaticScales, romanNumerals } from "./Constants.svelte"
 
 let cMajor = makeScale(chromaticScales.flats, "major")
@@ -8,17 +8,30 @@ let cMajorChords = makeDiatonicChords(cMajor, 4)
 console.log(cMajorChords);
 </script>
 
-
-
-
 <div class="docs">
 
 	<h2>Make Diatonic chords</h2>
 	<p>
-		The <b>makeDiatonicChords()</b> function takes scale (Array) and notesInChord (number) 	as arguments.This function runs a map method on the scale array, wich passes the getMode() function, with scale and the "index", added by 1, as arguments thru the makeChord() function, together with "noteInChord". The return is a nested a array populated by arrays of note names of each chord.  
-	
+		The <b>makeDiatonicChords()</b> function takes scale (Array) and notesInChord (number)	as arguments.
+		This function runs a map method on the scale array, wich passes the getMode() function, 
+		with scale and the "index", added by 1, as arguments thru the makeChord() function, 
+		together with "noteInChord". The return is a nested a array populated by arrays of note names of each chord.  
+
 	</p>
 </div>
+<p>
+  Below is the output of: <br></p>
+
+<div class="example">
+	<code>
+		let cMajor = makeScale(chromaticScales.flats, "major")<br>
+		let cMajorChords = makeDiatonicChords(cMajor, 4)
+		
+	 </code>
+</div>
+	
+	
+
 
 { #each cMajorChords as chord, o }
  <div class="diatonic-chord" >
@@ -35,7 +48,21 @@ console.log(cMajorChords);
 
 <style>
 
+	code {
+		background-color: rgb(29, 28, 28);
+
+		color: white;
+		
+	}
+
+	.example {
+		background-color: rgb(29, 28, 28) ;
+		max-width: 600px;
+			padding: 2em;
+	}
+
 .diatonic-chord {
+	 margin-top: 2em;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-evenly;
@@ -57,7 +84,8 @@ console.log(cMajorChords);
 
 	.roman-numerals {
 		min-width: 40px;
-		margin-left: 3em; 
+		margin-left: 4em;
+		margin-right: 1em; 
 		padding-right: 1em;
 		font-weight: bold;
     }	
