@@ -6,17 +6,31 @@ import MakeScale from './MakeScale.svelte'
 
 </script>
 
-<h1>Guitar Sudoku</h1>
+
+<header>
+	<h1>Guitar Sudoku Tools V0.01a</h1>
+	<span>Guitar Sudoku Tools aims to be a code library that generates guitar lessons material APIs related to the Guitar Sudoku method.</span>
+</header>
+
+<main>
+
+
+
+
 
 <MakeScale noteName="e" scaleType="major" />
 <MakeScale noteName="d" scaleType="minor_melodic"/>
 <DiatonicHarmony />
-<GuitarNeck />
+ 
+<section id="guitarneck">
+
+	<GuitarNeck />
+</section>
 
 
-<h1>Harmony</h1>
+<h2>Harmony</h2>
 <div class="chordsheet">
-	<HarmonyGrid chordName="Em" 
+	<HarmonyGrid chordName="E" 
 	strings =  {[
           {openString: "e", stringNum: 1, fret: "0", noteName: "e", harmony: "r", note: "e3"},
           {openString: "b", stringNum: 2, fret: "0", noteName: "b", harmony: "5", note: "b2"},
@@ -27,10 +41,23 @@ import MakeScale from './MakeScale.svelte'
                       ]}
 	/> 
 	<HarmonyGrid  chordName="Am"/>
+	
 </div>
+
+</main>
+
+<footer>
+	<p>
+		made by <a href="https://grafisker.no">HEYROCKME|Grafisker</a> 
+	</p>
+	  
+</footer>
 
 
 <style>
+
+
+
 	 * {padding: 0;}
 
 	/* .selectors {
@@ -44,5 +71,23 @@ import MakeScale from './MakeScale.svelte'
 	}
 
 
+ header {
+	padding: 3em;
+	margin: 0 auto;
+	width: 50vw;
+	
+ }
+
+ main {
+	margin: 0 auto;
+	width: 80vw;
+ }
+
+ footer {
+	padding: 3em;
+	margin: 0 auto;
+	width: 50vw;
+	text-align: center;
+ }
 	
 </style>
